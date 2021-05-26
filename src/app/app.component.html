@@ -1,6 +1,69 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Toggle numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <div *ngIf="onlyOdd">
+          <li
+            class="list-group-item"
+            [ngClass]="{odd: odd % 2 !==0}"
+            [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'orange' : 'transparent'}"
+            *ngFor="let odd of odddNumbers">
+            {{odd}}
+          </li>
+        </div>
+<!--        <div *ngIf="!onlyOdd">-->
+<!--          <li-->
+<!--            class="list-group-item"-->
+<!--            [ngClass]="{odd: even % 2 !==0}"-->
+<!--            [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'orange' : 'transparent'}"-->
+<!--            *ngFor="let even of evennNumbers">-->
+<!--            {{even}}-->
+<!--          </li>-->
+<!--        </div>-->
+        <div *appUnless="onlyOdd">
+          <li
+            class="list-group-item"
+            [ngClass]="{odd: even % 2 !==0}"
+            [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'orange' : 'transparent'}"
+            *ngFor="let even of evennNumbers">
+            {{even}}
+          </li>
+        </div>
+      </ul>
+      <ng-template [ngIf]="onlyOdd">
+        <p>Only odd</p>
+      </ng-template>
+      <ng-template [ngIf]="!onlyOdd">
+        <p>Only even</p>
+      </ng-template>
+      <p appBasicHighlight>Style me with basic highlight</p>
+<!--      <p appBetterHighlight>Style me with better highlight</p>-->
+<!--      <p appBetterHighlight [defaultColor]="'pink'" [highlightColor]="'yellow'" >Style me with better highlight</p>-->
+      <p [appBetterHighlight]="'yellow'" [defaultColor]="'pink'" >Style me with better highlight</p>
+
+      <div [ngSwitch]="switchValue">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="50">Value is 50</p>
+        <p *ngSwitchCase="100">Value is 100</p>
+        <p *ngSwitchDefault>Value is default</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<hr class="mt-5">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
       <h3>Bind it!</h3>
       <ol>
         <li>Create three new components: GameControl, Odd and Even</li>

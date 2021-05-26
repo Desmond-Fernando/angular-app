@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  // numbers = [1, 2, 3, 4, 5];
+  odddNumbers = [1,3,5];
+  evennNumbers = [2,4];
+  onlyOdd = false;
+
   // serverId: number = 10;
   // serverStatus: string = 'Offline';
   // username: string = '';
@@ -21,6 +26,7 @@ export class AppComponent {
   ];
   oddNumbers: number[] = [];
   evenNumbers: number[] = [];
+  switchValue = 10;
 
   onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
