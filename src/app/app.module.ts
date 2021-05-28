@@ -14,6 +14,12 @@ import { OddComponent } from './odd/odd.component';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless/unless.directive';
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { AccountHolderComponent } from './account-holder/account-holder.component';
+import { StatusHolderComponent } from './status-holder/status-holder.component';
+import { ActiveUsersComponent } from './active-users/active-users.component';
+import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,13 @@ import { UnlessDirective } from './unless/unless.directive';
     OddComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    AccountComponent,
+    NewAccountComponent,
+    AccountHolderComponent,
+    StatusHolderComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
     imports: [
         BrowserModule,

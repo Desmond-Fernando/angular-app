@@ -1,11 +1,45 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AccountService} from "./shared/account.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  // providers: [AccountService]
 })
-export class AppComponent {
+export class AppComponent{
+
+  // accounts: {name: string, status: string}[] = [];
+  //
+  // constructor(private  accountService: AccountService) {
+  // }
+  //
+  // ngOnInit(): void {
+  //   this.accounts = this.accountService.accounts;
+  // }
+
+  // accounts = [
+  //   {
+  //     name: 'Master Account',
+  //     status: 'active'
+  //   },
+  //   {
+  //     name: 'Testaccount',
+  //     status: 'inactive'
+  //   },
+  //   {
+  //     name: 'Hidden Account',
+  //     status: 'unknown'
+  //   }
+  // ];
+
+  // onAccountAdded(newAccount: {name: string, status: string}) {
+  //   this.accounts.push(newAccount);
+  // }
+  //
+  // onStatusChanged(updateInfo: {id: number, newStatus: string}) {
+  //   this.accounts[updateInfo.id].status = updateInfo.newStatus;
+  // }
 
   // numbers = [1, 2, 3, 4, 5];
   odddNumbers = [1,3,5];
@@ -59,5 +93,6 @@ export class AppComponent {
       this.oddNumbers.push(firedNumber);
     }
   }
+
 }
 
