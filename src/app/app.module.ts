@@ -20,6 +20,15 @@ import { AccountHolderComponent } from './account-holder/account-holder.componen
 import { StatusHolderComponent } from './status-holder/status-holder.component';
 import { ActiveUsersComponent } from './active-users/active-users.component';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { Path1Component } from './obser/path1/path1.component';
+import { Path2Component } from './obser/path2/path2.component';
+import {RouterModule} from "@angular/router";
+
+const appRoutes = [
+  {path: 'path1', component : Path1Component},
+  {path: 'path2', component : Path2Component}
+];
 
 @NgModule({
   declarations: [
@@ -40,11 +49,15 @@ import { InactiveUsersComponent } from './inactive-users/inactive-users.componen
     AccountHolderComponent,
     StatusHolderComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    RecipeEditComponent,
+    Path1Component,
+    Path2Component
   ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        RouterModule.forRoot(appRoutes)
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,14 @@
 <div class="container">
+  <button class="btn btn-success" [routerLink]="['path1']">Path1</button>
+  <button class="btn btn-primary" [routerLink]="['path2']">Path2</button>
+  <button class="btn btn-secondary" (click)="onActivate()">Activate</button>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<hr>
+
+<div class="container">
   <app-status-holder></app-status-holder>
 </div>
 <hr>

@@ -35,26 +35,26 @@ export class ServerElementComponent implements OnInit,
   }
 
   ngOnChanges(changes:SimpleChanges): void {
-    console.log('ngOnChanges called!');
-    console.log(changes);
+    // console.log('ngOnChanges called!');
+    // console.log(changes);
   }
 
   ngDoCheck() {
-    console.log('ngDoCheck called!');
+    // console.log('ngDoCheck called!');
   }
   ngAfterContentInit() {
-    console.log('ngAfterContentInit called!');
-    console.log('Paragraph content + ' + this.paragraph.nativeElement.textContent);
+    // console.log('ngAfterContentInit called!');
+    // console.log('Paragraph content + ' + this.paragraph.nativeElement.textContent);
   }
   ngAfterContentChecked() {
-    console.log('ngAfterContentChecked called!');
+    // console.log('ngAfterContentChecked called!');
   }
   ngAfterViewInit() {
     console.log('ngAfterViewInit called!');
     console.log('Header content + ' + this.header.nativeElement.textContent);
   }
   ngAfterViewChecked() {
-    console.log('ngAfterViewChecked called!');
+    // console.log('ngAfterViewChecked called!');
   }
   ngOnDestroy() {
     console.log('ngOnDestroy called!');

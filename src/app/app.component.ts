@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountService} from "./shared/account.service";
+import {ActivationService} from "./obser/activation-service";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,9 @@ import {AccountService} from "./shared/account.service";
   // providers: [AccountService]
 })
 export class AppComponent{
+
+  constructor(private activationService: ActivationService) {
+  }
 
   // accounts: {name: string, status: string}[] = [];
   //
@@ -94,5 +98,9 @@ export class AppComponent{
     }
   }
 
+  onActivate() {
+    // this.activationService.activattionEmitter.emit(true);
+    this.activationService.activattionEmitter.next(true);
+  }
 }
 
