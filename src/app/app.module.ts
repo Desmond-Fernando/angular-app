@@ -20,10 +20,10 @@ import { AccountHolderComponent } from './account-holder/account-holder.componen
 import { StatusHolderComponent } from './status-holder/status-holder.component';
 import { ActiveUsersComponent } from './active-users/active-users.component';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { Path1Component } from './obser/path1/path1.component';
 import { Path2Component } from './obser/path2/path2.component';
 import {RouterModule} from "@angular/router";
+import { TdFormComponent } from './form/td-form/td-form.component';
 
 const appRoutes = [
   {path: 'path1', component : Path1Component},
@@ -50,9 +50,9 @@ const appRoutes = [
     StatusHolderComponent,
     ActiveUsersComponent,
     InactiveUsersComponent,
-    RecipeEditComponent,
     Path1Component,
-    Path2Component
+    Path2Component,
+    TdFormComponent
   ],
     imports: [
         BrowserModule,
