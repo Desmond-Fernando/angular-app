@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { ServerComponent } from './server/server.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { GameControlComponent } from './game-control/game-control.component';
@@ -24,6 +24,8 @@ import { Path1Component } from './obser/path1/path1.component';
 import { Path2Component } from './obser/path2/path2.component';
 import {RouterModule} from "@angular/router";
 import { TdFormComponent } from './form/td-form/td-form.component';
+import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
+import { AssignmentComponent } from './form/reactive-form/assignment/assignment.component';
 
 const appRoutes = [
   {path: 'path1', component : Path1Component},
@@ -52,11 +54,14 @@ const appRoutes = [
     InactiveUsersComponent,
     Path1Component,
     Path2Component,
-    TdFormComponent
+    TdFormComponent,
+    ReactiveFormComponent,
+    AssignmentComponent
   ],
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot(appRoutes)
     ],
   providers: [],
