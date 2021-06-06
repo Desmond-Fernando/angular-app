@@ -26,6 +26,15 @@ import {RouterModule} from "@angular/router";
 import { TdFormComponent } from './form/td-form/td-form.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 import { AssignmentComponent } from './form/reactive-form/assignment/assignment.component';
+import { PipeStartComponent } from './pipes/pipe-start/pipe-start.component';
+import {ShortenPipe} from "./pipes/shorten.pipe";
+import {FilterPipe} from "./pipes/filter.pipe";
+import {ReversePipe} from "./pipes/reverse.pipe";
+import {SortPipe} from "./pipes/sort.pipe";
+import { HttpStartComponent } from './httpp/http-start/http-start.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {AuthInterceptorService} from "./httpp/auth-interceptor.service";
+import {LoggingInterceptorService} from "./httpp/logging-interceptor.service";
 
 const appRoutes = [
   {path: 'path1', component : Path1Component},
@@ -56,15 +65,25 @@ const appRoutes = [
     Path2Component,
     TdFormComponent,
     ReactiveFormComponent,
-    AssignmentComponent
+    AssignmentComponent,
+    PipeStartComponent,
+    ShortenPipe,
+    FilterPipe,
+    ReversePipe,
+    SortPipe,
+    HttpStartComponent
   ],
     imports: [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpClientModule,
         RouterModule.forRoot(appRoutes)
     ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
